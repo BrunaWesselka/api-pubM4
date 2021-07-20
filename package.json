@@ -1,0 +1,19 @@
+{
+  "name": "api-modulo4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrunaWesselka/api-pubM4.git"
+  },
+  "author": "Grupo 4 - Grupo 4: Bruna Wesselka Tardoque – Carlos Alberto Bertão Ferreira Júnior – Allan Rodrigues Lima – Pedro Ronald Barbosa – Glauco Nunes Tolotto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrunaWesselka/api-pubM4/issues"
+  },
+  "homepage": "https://github.com/BrunaWesselka/api-pubM4#readme"
+}
