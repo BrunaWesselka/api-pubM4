@@ -10,24 +10,26 @@ const MUSICAS_SCHEMA = `CREATE TABLE IF NOT EXISTS "Musicas" (
     "Estilo" VARCHAR(20)
 );`
 
-// const ISERT_MUSICA = `INSERT INTO Musicas (ID, Musica, Cantor, Estilo)
-//     VALUES(1, 'Ordinary Man', 'Ozzy Osborn', 'Rock'),
-//         (2, 'Balão Magico', 'Turma do Balão Magico', 'Musica Infatil');`
-
-
 function criaTabelaMusicas() {
     db.run(MUSICAS_SCHEMA, (error) => {
         if (error) console.log("Erro ao criar tabela de Musicas");
     });
 }
 
+db.serialize(() => {
+    criaTabelaMusicas();
+    populaTabelaMusicas();
+  });
+
+
+// const ISERT_MUSICA = `INSERT INTO Musicas (ID, Musica, Cantor, Estilo)
+//     VALUES(1, 'Ordinary Man', 'Ozzy Osborn', 'Rock'),
+//         (2, 'Balão Magico', 'Turma do Balão Magico', 'Musica Infatil');`
+
+
+
 // function populaTabelaMusicas() {
 //     db.run(ISERT_MUSICA, (error) => {
 //         if (error) console.log("Erro ao popular tabela de Musicas");
 //     });
 // }
-
-db.serialize(() => {
-    criaTabelaMusicas();
-    populaTabelaMusicas();
-  });
