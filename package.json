@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/BrunaWesselka/api-pubM4/issues"
   },
-  "homepage": "https://github.com/BrunaWesselka/api-pubM4#readme"
+  "homepage": "https://github.com/BrunaWesselka/api-pubM4#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
