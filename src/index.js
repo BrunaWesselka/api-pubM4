@@ -9,3 +9,6 @@ app.use(bodyParser.json());
 
 //pedindo para porta que esta no arquivo de config
 app.listen(APP_PORT, console.log("Servidor funcionando na porta 3000"));
+
+
+
