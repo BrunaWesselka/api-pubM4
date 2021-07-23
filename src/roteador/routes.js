@@ -1,12 +1,12 @@
 const express = require('express');
 const roteador = express.Router();
 
-const CriarMusicas = require('../controller/musicasController.js');
+const ControllerMusicas = require('../controller/musicasController.js');
 
-//fazendo post, a função esta na pasta controller
-roteador.post('/musicas', CriarMusicas);
-roteador.get('/musicas',);
-roteador.delete('/musicas',)
-roteador.
+//CRUD da rota de musicas
+roteador.get('/musicas', ControllerMusicas);
+roteador.post('/musicas', ControllerMusicas.store);
+roteador.delete('/musicas',ControllerMusicas.destroy)
+roteador.patch('/musicas', ControllerMusicas)
 
 module.exposts = roteador;
