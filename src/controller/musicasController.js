@@ -15,6 +15,18 @@ class ControllerMusicas {
         res.status(201).json(novaMusica);
     }
 
+    async update(req,res) {
+        const {ID, NOME_DA_MUSICA, CANTOR, ESTILO} = req.body
+        const result = await Produtos.update({
+            NOME_DA_MUSICA, CANTOR, ESTILO
+        },{
+            where:{
+                ID
+            }
+        })
+        res.status(200).json(ID)
+    }
+
     async destroy(req, res){
         const {ID} = req.body;
 
