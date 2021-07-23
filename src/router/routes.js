@@ -10,4 +10,11 @@ roteador.delete('/musicas',ControllerMusicas.destroy);
 roteador.patch('/musicas', ControllerMusicas.update);
 
 
+const ControllerBebidasQuentes = require('../controller/bebidasquentesController.js');
+
+//CRUD da rota de bebidas quentes
+roteador.get('/bebidasquentes',ControllerBebidasQuentes.index);
+roteador.get('/bebidasquentes',ControllerBebidasQuentes.show);
+
+
 module.exports = roteador;
