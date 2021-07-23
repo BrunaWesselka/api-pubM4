@@ -11,22 +11,22 @@ const BebidasQuentes = database.define('BebidasQuentes', {
 
     Tipo_de_bebida: {
         type: DataTypes.STRING(10),
-        defaultValue: false
+        allowNull: false
     },
 
     Marca_da_bebida: {
         type: DataTypes.STRING(15),
-        defaultValue: false
+        allowNull: false
     },
 
     Teor_alcolico: {
         type: DataTypes.INTEGER(5),
-        defaultValue: false
+        allowNull: false
     },
 
     Preco: {
         type: DataTypes.NUMBER(10),
-        defaultValue: false
+        allowNull: false
     }
 
 })

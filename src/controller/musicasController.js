@@ -4,41 +4,37 @@ class ControllerMusicas {
 
     async index(req,res){
         const resultado = await Musicas.findAll();
-        res.status(200).json(resultado)
+        res.status(200).json(resultado);
     }
 
     async store(req, res) {
-        const { NOME_DA_MUSICA, CANTOR, ESTILO } = req.body;
-
-        const novaMusica = await Musicas.create({ NOME_DA_MUSICA, CANTOR, ESTILO });
-
+        const {name, cantor, estilo} = req.body;
+       
+        const novaMusica = await Musicas.create({NOME_DA_MUSICA:name, CANTOR:cantor, ESTILO:estilo});
+        
         res.status(201).json(novaMusica);
     }
 
     async update(req,res) {
-        const {ID, NOME_DA_MUSICA, CANTOR, ESTILO} = req.body
-        const result = await Produtos.update({
-            NOME_DA_MUSICA, CANTOR, ESTILO
-        },{
+        const {id,name, cantor, estilo} = req.body
+        const result = await Musicas.update({NOME_DA_MUSICA: name, CANTOR: cantor, ESTILO:estilo},{
             where:{
-                ID
+                ID: id
             }
-        })
-        res.status(200).json(ID)
+        });
+        res.status(200).json(id)
     }
 
     async destroy(req, res){
-        const {ID} = req.body;
+        const {name} = req.body;
 
         const musica = await Musicas.destroy({
             where: {
-                ID: ID
+                NOME_DA_MUSICA: name
             }
         });
-
-        res.status(200).json(ID)
+        res.status(200).json(name);
     }
-
 }
 
 module.exports = new ControllerMusicas;

@@ -11,22 +11,22 @@ const Funcionarios = database.define('Funcionarios', {
 
     Nome_funcionario: {
         type: DataTypes.STRING(20),
-        defaultValue: false
+        allowNull: false
     },
 
     Salario_funcionario: {
         type: DataTypes.NUMBER(10),
-        defaultValue: false
+        allowNull: false
     },
 
     Turno_funcionario: {
         type: DataTypes.STRING(10),
-        defaultValue: false
+        allowNull: false
     },
 
     Idade_funcionario: {
         type: DataTypes.NUMBER(10),
-        defaultValue: false
+        allowNull: false
     }
 
 })

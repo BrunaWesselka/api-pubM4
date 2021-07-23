@@ -11,17 +11,17 @@ const Musicas = database.define('Musicas',{
 
     NOME_DA_MUSICA: {
         type: DataTypes.STRING(20),
-        defaultValue: false
+        allowNull: false
     },
 
     CANTOR: {
         type: DataTypes.STRING(20),
-        defaultValue: false
+        allowNull: false
     },
 
     ESTILO: {
         type: DataTypes.STRING(50),
-        defaultValue: false
+        allowNull: false
     }
 })
 

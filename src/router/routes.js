@@ -10,4 +10,4 @@ roteador.delete('/musicas',ControllerMusicas.destroy);
 roteador.patch('/musicas', ControllerMusicas.update);
 
 
-module.exposts = roteador;
+module.exports = roteador;

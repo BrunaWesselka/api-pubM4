@@ -9,11 +9,11 @@ const Comidas = database.define('Comidas', {
     },
     Tipo_de_comida:{
         type: DataTypes.STRING(20),
-        defaultValue: false
+        allowNull: false
     },
     Preco:{
         type: DataTypes.NUMBER(6),
-        defaultValue: false
+        allowNull: false
     }
 })
 async function criarTabelaComidas (){
