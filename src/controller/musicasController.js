@@ -2,8 +2,9 @@ const Musicas = require('../models/modelsMusica.js');
 
 class ControllerMusicas {
 
-    async show(req,res){
-        
+    async index(req,res){
+        const resultado = await Musicas.findAll();
+        res.status(200).json(resultado)
     }
 
     async store(req, res) {
