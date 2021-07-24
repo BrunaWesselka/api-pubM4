@@ -1,6 +1,6 @@
 const Bebidas = require("../models/modelsBebidas.js");
 
-class ControllerBebidas {
+class ControllerBebidasFrias {
 
     async index(req, res) {
         const resultado = await Bebidas.findAll();
