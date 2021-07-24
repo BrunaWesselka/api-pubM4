@@ -7,6 +7,16 @@ class ControllerMusicas {
         res.status(200).json(resultado);
     }
 
+    async show(req, res) {
+        const {nome} = req.body;
+        const resultado = await Musicas.findAll({
+            where: {
+                NOME_DA_MUSICA: nome
+            }
+        })
+        res.status(200).json(nome);
+    }
+
     async store(req, res) {
         const {name, cantor, estilo} = req.body;
        

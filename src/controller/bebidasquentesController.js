@@ -29,9 +29,7 @@ class ControllerBebidasQuentes {
             where: {
                 ID: id
             }
-        }
-
-        )
+        });
         res.status(200).json(id);
     }
 
