@@ -26,14 +26,14 @@ class ControllerMusicas {
     }
 
     async destroy(req, res){
-        const {name} = req.body;
+        const {nome} = req.body;
 
         const musica = await Musicas.destroy({
             where: {
-                NOME_DA_MUSICA: name
+                NOME_DA_MUSICA: nome
             }
         });
-        res.status(200).json(name);
+        res.status(200).json(nome);
     }
 }
 
