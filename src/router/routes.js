@@ -31,3 +31,14 @@ roteador.patch('/bebidas', ControllerBebidas.update);
 roteador.delete('/bebidas', ControllerBebidas.destroy);
 
 module.exports = roteador;
+
+const ControllerComidas = require('../controller/comidasController.js');
+
+//CRUD da rota de Comidas
+roteador.get('/comidas',ControllerComidas.index);
+roteador.get('/comidas',ControllerComidas.show);
+roteador.post('/comidas',ControllerComidas.store);
+roteador.patch('/comidas', ControllerComidas.update);
+roteador.delete('/comidas', ControllerComidas.destroy);
+
+module.exports = roteador;
