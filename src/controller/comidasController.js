@@ -14,7 +14,7 @@ class ControllerComidas {
                 OPCAO_DE_COMIDAS: nome
             }
         })
-        res.status(200).json(nome);
+        res.status(200).json(resultado);
     }
 
     async store(req, res) {

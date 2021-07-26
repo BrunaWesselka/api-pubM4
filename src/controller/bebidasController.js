@@ -14,7 +14,7 @@ class ControllerBebidasFrias {
                 OPCAO_DE_BEBIDAS: nome
             }
         })
-        res.status(200).json(nome);
+        res.status(200).json(resultado);
     }
 
     async store(req, res) {
@@ -29,9 +29,7 @@ class ControllerBebidasFrias {
             where: {
                 ID: ID
             }
-        }
-
-        )
+        })
         res.status(200).json(id);
     }
 

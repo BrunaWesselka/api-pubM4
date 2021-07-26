@@ -14,7 +14,7 @@ class ControllerMusicas {
                 NOME_DA_MUSICA: nome
             }
         })
-        res.status(200).json(nome);
+        res.status(200).json(resultado);
     }
 
     async store(req, res) {

@@ -14,7 +14,7 @@ class ControllerBebidasQuentes {
                 Tipo_de_bebida: nome
             }
         })
-        res.status(200).json(nome);
+        res.status(200).json(resultado);
     }
 
     async store(req, res) {
