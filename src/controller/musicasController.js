@@ -18,21 +18,21 @@ class ControllerMusicas {
     }
 
     async store(req, res) {
-        const {name, cantor, estilo} = req.body;
+        const {nome, cantor, estilo} = req.body;
        
-        const novaMusica = await Musicas.create({NOME_DA_MUSICA:name, CANTOR:cantor, ESTILO:estilo});
+        const novaMusica = await Musicas.create({NOME_DA_MUSICA:nome, CANTOR:cantor, ESTILO:estilo});
         
         res.status(201).json(novaMusica);
     }
 
     async update(req,res) {
         const {id,name, cantor, estilo} = req.body
-        const result = await Musicas.update({NOME_DA_MUSICA: name, CANTOR: cantor, ESTILO:estilo},{
+        const resultado = await Musicas.update({NOME_DA_MUSICA: name, CANTOR: cantor, ESTILO:estilo},{
             where:{
                 ID: id
             }
         });
-        res.status(200).json(id)
+        res.status(200).json(resultado)
     }
 
     async destroy(req, res){
@@ -43,7 +43,7 @@ class ControllerMusicas {
                 NOME_DA_MUSICA: nome
             }
         });
-        res.status(200).json(nome);
+        res.status(200).json(musica);
     }
 }
 
