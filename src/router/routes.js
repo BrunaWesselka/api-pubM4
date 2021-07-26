@@ -40,4 +40,14 @@ roteador.post('/comidas',ControllerComidas.store);
 roteador.patch('/comidas', ControllerComidas.update);
 roteador.delete('/comidas', ControllerComidas.destroy);
 
+const ControllerFuncionarios = require('../controller/funcionariosController.js');
+
+//CRUD da rota de Funcionarios
+roteador.get('/funcionarios', ControllerFuncionarios.index);
+roteador.get('/funcionarios/unique-value',ControllerFuncionarios.show);
+roteador.post('/funcionarios',ControllerFuncionarios.store);
+roteador.patch('/funcionarios', ControllerFuncionarios.update);
+roteador.delete('/funcionarios', ControllerFuncionarios.destroy);
+
+
 module.exports = roteador;
