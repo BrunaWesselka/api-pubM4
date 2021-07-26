@@ -7,6 +7,16 @@ class ControllerComidas {
         res.status(200).json(resultado);
     }
 
+    async show(req, res) {
+        const { nome } = req.body;
+        const resultado = await Comidas.findAll({
+            where: {
+                OPCAO_DE_COMIDAS: nome
+            }
+        })
+        res.status(200).json(nome);
+    }
+
     async store(req, res) {
         const {OPCAO_DE_COMIDA, TIPO_DE_COMIDA, SOBREMESA, PRECO} = req.body;
        
