@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser());
 app.use(express.json());
 app.use('/', roteador);
-const {APP_PORT} = require('./config/config.js');
+const APP_PORT = process.env.PORT || 3000;
 
 
 //pedindo para porta que esta no arquivo de config
