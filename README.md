@@ -50,53 +50,19 @@ npm install body-parser
 
 *inicie instalando e executando as dependências
 
-**determine as rotas possíveis do projeto;
-
-Monte o local onde as rotas ficarão guardadas ([https://www.oracle.com/br/database/what-is-database/](https://www.oracle.com/br/database/what-is-database/))
-
-monte as entidades das possíveis rotas e arne-as na pasta models
+Após ter instalado todas as dependencias, rode apenas o arquivo "index.js" na pasta src
 
 ```jsx
-const {Sequelize, DataTypes} = require('sequelize');
-const database = require('../database/data.js');
-
-const SuaEntidade = database.define('SuaEntidade', {
-
-    ID: {
-        type: DataTypes.UUID,
-        defaultValue: Sequelize.UUIDV4,
-        primaryKey: true
-    }
-}
+node ./src/index.js
 ```
-
-na pasta controllers execute as funções de cada requisição (GET, POST, PATCH e DELETE)
-
-Crie o arquivo routes armazenado em uma pasta routers
-
-Peça requisição do Router no arquivo routes.js
+Ou apenas use o comando para iniciar o nodemon.
 
 ```jsx
-const express = require('express');
+npm start
 ```
+Verifique se servidor está ligado na porta 3000.
+Se os passos a cima forem executados com sucesso você poderá fazer seus testes via Insominia sem problemas.
 
-```jsx
-const roteador = express.Router(); 
-```
-
-Exemplo da rota:
-
-```jsx
-roteador.get('/sua-rota', ControllerSuaRota.index);
-```
-
-Faça sua rota e execute a função respectiva do método na pasta Controller
-
-Ao fazer todos os passos acima, execute o arquivo index
-
-```jsx
-node "caminho da pasta do index"
-```
  
  # Autores
  
