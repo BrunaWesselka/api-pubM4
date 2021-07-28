@@ -19,6 +19,10 @@ class ControllerBebidasFrias {
 
     async store(req, res) {
         const { OPCAO_DE_BEBIDAS, QUANTIDADE_ML, PRECO } = req.body;
+        const verificando = await Bebidas.findOne({
+            where: OPCAO_DE_BEBIDAS
+        });
+        if(verificando) throw new Error("Bebida já existente");
         const novaBebidaFria = await Bebidas.create({ OPCAO_DE_BEBIDAS, QUANTIDADE_ML, PRECO });
         res.status(201).json(novaBebidaFria);
     }

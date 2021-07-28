@@ -19,6 +19,12 @@ class ControllerFuncionarios {
 
     async store(req, res) {
         const {nome, salario, turno, idade} = req.body;
+
+        const verificando = await Funcionarios.findOne({
+            where: {Nome_funcionario:nome}
+        });
+
+        if(verificando) throw new Error("Funcionario já existente")
        
         const novoFuncionario = await Funcionarios.create({Nome_funcionario:nome, Salario_funcionario:salario, Turno_funcionario:turno, Idade_funcionario: idade});
         

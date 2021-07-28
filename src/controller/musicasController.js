@@ -19,6 +19,12 @@ class ControllerMusicas {
 
     async store(req, res) {
         const {nome, cantor, estilo} = req.body;
+
+        const verificando = await Musicas.findOne({
+            where: {NOME_DA_MUSICA:nome}
+        });
+
+        if(verificando) throw new Error("Musica ja existente")
        
         const novaMusica = await Musicas.create({NOME_DA_MUSICA:nome, CANTOR:cantor, ESTILO:estilo});
         

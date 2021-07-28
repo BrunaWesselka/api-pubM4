@@ -19,6 +19,12 @@ class ControllerComidas {
 
     async store(req, res) {
         const {OPCAO_DE_COMIDA, TIPO_DE_COMIDA, SOBREMESA, PRECO} = req.body;
+
+        const verificando = await Comidas.findOne({
+            where: OPCAO_DE_COMIDA
+        });
+
+        if(verificando) throw new Error("Comida já existente")
        
         const novaComida = await Comidas.create({OPCAO_DE_COMIDA:OPCAO_DE_COMIDA, TIPO_DE_COMIDA:TIPO_DE_COMIDA, SOBREMESA:SOBREMESA, PRECO:PRECO});
         

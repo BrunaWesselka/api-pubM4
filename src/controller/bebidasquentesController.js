@@ -19,6 +19,10 @@ class ControllerBebidasQuentes {
 
     async store(req, res) {
         const { Tipo_de_bebida, Marca_da_bebida, Teor_alcolico, Preco } = req.body;
+        const verificando = await BebidasQuentes.findOne({
+            where: Tipo_de_bebida
+        });
+        if(verificando) throw new Error("Bebida já existente");
         const novaBebida = await BebidasQuentes.create({ Tipo_de_bebida, Marca_da_bebida, Teor_alcolico, Preco });
         res.status(201).json(novaBebida);
     }
