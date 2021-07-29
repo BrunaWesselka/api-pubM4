@@ -63,7 +63,10 @@ npm start
 Verifique se servidor está ligado na porta 3000.
 Se os passos a cima forem executados com sucesso você poderá fazer seus testes via Insominia sem problemas.
 
- 
+ ### Heroku
+
+*link* => https://rocky-stream-89814.herokuapp.com/
+
  # Autores
  
  #### Glauco Tolotto
