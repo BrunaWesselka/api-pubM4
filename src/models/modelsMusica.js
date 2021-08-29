@@ -22,6 +22,11 @@ const Musicas = database.define('Musicas',{
     ESTILO: {
         type: DataTypes.STRING(50),
         allowNull: false
+    },
+
+    LINK: {
+        type: DataTypes.STRING(250),
+        allowNull: false,
     }
 })
 

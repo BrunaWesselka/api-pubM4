@@ -9,24 +9,19 @@ const Funcionarios = database.define('Funcionarios', {
         primaryKey: true
     },
 
-    Nome_funcionario: {
+    Nome: {
         type: DataTypes.STRING(20),
         allowNull: false
     },
-
-    Salario_funcionario: {
-        type: DataTypes.NUMBER(10),
+     
+    GitHub: {
+        type: DataTypes.STRING(50),
         allowNull: false
     },
 
-    Turno_funcionario: {
-        type: DataTypes.STRING(10),
-        allowNull: false
-    },
-
-    Idade_funcionario: {
-        type: DataTypes.NUMBER(10),
-        allowNull: false
+    Linkedin: {
+        type: DataTypes.STRING(50),
+        allowNull:false
     }
 
 })

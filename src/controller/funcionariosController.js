@@ -11,7 +11,7 @@ class ControllerFuncionarios {
         const {nome} = req.body;
         const resultado = await Funcionarios.findAll({
             where: {
-                Nome_funcionario: nome
+                Nome: nome
             }
         })
         res.status(200).json(resultado);
@@ -21,7 +21,7 @@ class ControllerFuncionarios {
         const {nome, salario, turno, idade} = req.body;
 
         const verificando = await Funcionarios.findOne({
-            where: {Nome_funcionario:nome}
+            where: {Nome:nome}
         });
 
         if(verificando) throw new Error("Funcionario já existente")
@@ -32,8 +32,8 @@ class ControllerFuncionarios {
     }
 
     async update(req,res) {
-        const {id,nome, salario, turno, idade} = req.body
-        const resultado = await Funcionarios.update({Nome_funcionario:nome, Salario_funcionario:salario, Turno_funcionario:turno, Idade_funcionario: idade},{
+        const {id,nome, github, linkedin} = req.body
+        const resultado = await Funcionarios.update({Nome:nome, GitHub:github, Linkedin:linkedin},{
             where:{
                 ID: id
             }
@@ -46,10 +46,10 @@ class ControllerFuncionarios {
 
         const funcionario = await Funcionarios.destroy({
             where: {
-                Nome_funcionario: nome
+                Nome: nome
             }
         });
-        res.status(200).json(nome);
+        res.status(200).json(funcionario);
     }
 }
 
