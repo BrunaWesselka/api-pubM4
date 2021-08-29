@@ -21,7 +21,7 @@ roteador.patch('/bebidasquentes', ControllerBebidasQuentes.update);
 roteador.delete('/bebidasquentes', ControllerBebidasQuentes.destroy);
 
 
-const ControllerBebidasFrias = require('../controller/bebidasController.js');
+const ControllerBebidasFrias = require('../controller/bebidasFriasController.js');
 
 //CRUD da rota das Bebidas Frias
 roteador.get('/bebidas',ControllerBebidasFrias.index);
@@ -31,14 +31,14 @@ roteador.patch('/bebidas', ControllerBebidasFrias.update);
 roteador.delete('/bebidas', ControllerBebidasFrias.destroy);
 
 
-const ControllerComidas = require('../controller/comidasController.js');
+const ControllerComidasSalgadas = require('../controller/comidasSalgadasController.js');
 
 //CRUD da rota de Comidas
-roteador.get('/comidas',ControllerComidas.index);
-roteador.get('/comidas/unique-value',ControllerComidas.show);
-roteador.post('/comidas',ControllerComidas.store);
-roteador.patch('/comidas', ControllerComidas.update);
-roteador.delete('/comidas', ControllerComidas.destroy);
+roteador.get('/comidas-salgadas',ControllerComidasSalgadas.index);
+roteador.get('/comidas-salgadas/unique-value',ControllerComidasSalgadas.show);
+roteador.post('/comidas-salgadas',ControllerComidasSalgadas.store);
+roteador.patch('/comidas-salgadas', ControllerComidasSalgadas.update);
+roteador.delete('/comidas-salgadas', ControllerComidasSalgadas.destroy);
 
 const ControllerFuncionarios = require('../controller/funcionariosController.js');
 
@@ -49,5 +49,12 @@ roteador.post('/funcionarios',ControllerFuncionarios.store);
 roteador.patch('/funcionarios', ControllerFuncionarios.update);
 roteador.delete('/funcionarios', ControllerFuncionarios.destroy);
 
+const ControllerSobremesas = require('../controller/sobremesasController.js');
 
+//CRUD da rota de Sobremesas
+roteador.get('/sobremesas', ControllerSobremesas.index);
+roteador.get('/sobremesas/unique-value',ControllerSobremesas.show);
+roteador.post('/sobremesas',ControllerSobremesas.store);
+roteador.patch('/sobremesas', ControllerSobremesas.update);
+roteador.delete('/sobremesas', ControllerSobremesas.destroy);
 module.exports = roteador;

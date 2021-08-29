@@ -11,7 +11,7 @@ class ControllerMusicas {
         const {nome} = req.body;
         const resultado = await Musicas.findAll({
             where: {
-                NOME_DA_MUSICA: nome
+                Nome_da_musica: nome
             }
         })
         res.status(200).json(resultado);
@@ -21,19 +21,19 @@ class ControllerMusicas {
         const {nome, cantor, estilo, link} = req.body;
 
         const verificando = await Musicas.findOne({
-            where: {NOME_DA_MUSICA:nome}
+            where: {Nome_da_musica:nome}
         });
 
         if(verificando) throw new Error("Musica ja existente")
        
-        const novaMusica = await Musicas.create({NOME_DA_MUSICA:nome, CANTOR:cantor, ESTILO:estilo, LINK:link});
+        const novaMusica = await Musicas.create({Nome_da_musica:nome, Cantor:cantor, Estilo:estilo, Link:link});
         
         res.status(201).json(novaMusica);
     }
 
     async update(req,res) {
         const {id,name, cantor, estilo, link} = req.body
-        const resultado = await Musicas.update({NOME_DA_MUSICA: name, CANTOR: cantor, ESTILO:estilo, LINK:link},{
+        const resultado = await Musicas.update({Nome_da_musica: name, Cantor: cantor, Estilo:estilo, Link:link},{
             where:{
                 ID: id
             }
@@ -46,7 +46,7 @@ class ControllerMusicas {
 
         const musica = await Musicas.destroy({
             where: {
-                NOME_DA_MUSICA: nome
+                Nome_da_musica: nome
             }
         });
         res.status(200).json(musica);

@@ -9,22 +9,22 @@ const Musicas = database.define('Musicas',{
         primaryKey: true
     },
 
-    NOME_DA_MUSICA: {
+    Nome_da_musica: {
         type: DataTypes.STRING(20),
         allowNull: false
     },
 
-    CANTOR: {
+    Cantor: {
         type: DataTypes.STRING(20),
         allowNull: false
     },
 
-    ESTILO: {
+    Estilo: {
         type: DataTypes.STRING(50),
         allowNull: false
     },
 
-    LINK: {
+    Link: {
         type: DataTypes.STRING(250),
         allowNull: false,
     }

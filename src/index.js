@@ -11,7 +11,6 @@ app.use('/', roteador);
 const APP_PORT = process.env.PORT || 5000;
 
 
-//pedindo para porta que esta no arquivo de config
 app.listen(APP_PORT, console.log("Servidor funcionando na porta 5000"));
 
 

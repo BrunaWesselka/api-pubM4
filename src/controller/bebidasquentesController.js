@@ -8,43 +8,46 @@ class ControllerBebidasQuentes {
     }
 
     async show(req, res) {
-        const { nome } = req.body;
+        const { tipo } = req.body;
         const resultado = await BebidasQuentes.findAll({
             where: {
-                Tipo_de_bebida: nome
+                Tipo_de_bebida: tipo
             }
         })
         res.status(200).json(resultado);
     }
 
     async store(req, res) {
-        const { Tipo_de_bebida, Marca_da_bebida, Teor_alcolico, Preco } = req.body;
+        const { tipo, marca, teor_alcolico, preco } = req.body;
+        
         const verificando = await BebidasQuentes.findOne({
-            where: Tipo_de_bebida
+            where: {Tipo_de_bebida:tipo}
         });
+
         if(verificando) throw new Error("Bebida já existente");
-        const novaBebida = await BebidasQuentes.create({ Tipo_de_bebida, Marca_da_bebida, Teor_alcolico, Preco });
+
+        const novaBebida = await BebidasQuentes.create({ Tipo_de_bebida:tipo, Marca_da_bebida:marca, Teor_alcolico:teor_alcolico, Preco:preco });
         res.status(201).json(novaBebida);
     }
 
     async update(req, res) {
-        const { id, Tipo_de_bebida, Marca_da_bebida, Teor_alcolico, Preco } = req.body;
-        const resultado = await BebidasQuentes.update({ Tipo_de_bebida, Marca_da_bebida, Teor_alcolico, Preco}, {
+        const { id, tipo, marca, teor_alcolico, preco } = req.body;
+        const resultado = await BebidasQuentes.update({Tipo_de_bebida:tipo, Marca_da_bebida:marca, Teor_alcolico:teor_alcolico, Preco:preco}, {
             where: {
                 ID: id
             }
         });
-        res.status(200).json(id);
+        res.status(200).json(resultado);
     }
 
     async destroy(req, res) {
-        const {Tipo_de_bebida} = req.body;
+        const {tipo} = req.body;
         const resultado = await BebidasQuentes.destroy({
             where:{
-                Tipo_de_bebida:Tipo_de_bebida
+                Tipo_de_bebida:tipo
             }
         })
-        res.status(200).json(Tipo_de_bebida);
+        res.status(200).json(resultado);
     }
 }
 

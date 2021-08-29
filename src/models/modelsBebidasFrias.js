@@ -9,17 +9,22 @@ const Bebidas = database.define('Bebidas', {
         primaryKey: true
     },
 
-    OPCAO_DE_BEBIDAS: {
+    Tipo_de_bebida: {
         type: DataTypes.STRING(10),
         allowNull: false
     },
 
-    QUANTIDADE_ML: {
-        type: DataTypes.NUMBER(15),
+    Marca_da_bebida: {
+        type: DataTypes.STRING(15),
         allowNull: false
     },
 
-    PRECO: {
+    Teor_alcolico: {
+        type: DataTypes.INTEGER(5),
+        allowNull: false
+    },
+
+    Preco: {
         type: DataTypes.NUMBER(10),
         allowNull: false
     }
