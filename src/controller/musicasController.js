@@ -32,8 +32,8 @@ class ControllerMusicas {
     }
 
     async update(req,res) {
-        const {id,name, cantor, estilo, link} = req.body
-        const resultado = await Musicas.update({Nome_da_musica: name, Cantor: cantor, Estilo:estilo, Link:link},{
+        const {id,nome, cantor, estilo, link} = req.body
+        const resultado = await Musicas.update({Nome_da_musica: nome, Cantor: cantor, Estilo:estilo, Link:link},{
             where:{
                 ID: id
             }
