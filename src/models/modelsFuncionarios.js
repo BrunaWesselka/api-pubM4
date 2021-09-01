@@ -22,6 +22,11 @@ const Funcionarios = database.define('Funcionarios', {
     Linkedin: {
         type: DataTypes.STRING(50),
         allowNull:false
+    },
+
+    Imagem:{
+        type: DataTypes.STRING(250),
+        allowNull:false
     }
 
 })
